@@ -21,15 +21,28 @@
 
     <!-- Custom styles for this template -->
     <link href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+    <link href="../node_modules/css/css/a.css" rel="stylesheet" type="text/css">
     <style type="text/css">
       
       h3{
         text-shadow:  2px 2px #000000;
         text-align: center;
       }
+ 
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
     </style>
   </head>
   <script type="text/javascript">
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 function fetch(){
 	var city=document.getElementById("city").value;
   var booking=document.getElementById("booking").value;
@@ -52,31 +65,22 @@ window.location.href = "details.html" + queryString;
   <body id="page-top" style="overflow-y: hidden">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container" style="text-align: left;">
-       
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-left">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="./info.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Info</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../contact/Contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>  
+    <nav style="background-color: #000000; height: 5px;" id="mainNav">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span> 
+      <div class="container">
       </div>
     </nav>
-
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="../form.html">Home</a>
+      <a href="#">Information</a>
+      <a href="../contact/Contact.html">Contact</a>
+      
+    </div>
+    
     <!-- Header -->
     <header class="masthead">
+ 
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
          
@@ -113,7 +117,7 @@ window.location.href = "details.html" + queryString;
                         </select>
                       </div>
                   </div>
-                       <button type="submit" class="btn btn-primary" style="margin-left: 250px; margin-right:200px;" onclick="fetch()" >Submit </button> 
+                       <button type="submit" class="btn btn-primary" style="margin-left: 160px; margin-right:200px;" onclick="fetch()" >Submit </button> 
                   </div>
                   
                 </form>
@@ -132,9 +136,9 @@ window.location.href = "details.html" + queryString;
    
 
     <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
-      
-    </footer>
+    <div class="footer">
+        <p>jhdfl</p>
+      </div>
 
     <!--Bootstrap core JavaScript -->
    <!--  <script src="https://blackrockdigital.github.io/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
